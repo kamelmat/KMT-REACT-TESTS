@@ -9,14 +9,14 @@ export const Simplecounter = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setseconds(prevSeconds => prevSeconds + 1)
-            
+
         }, 1000);
         return () => clearInterval(timer);
     }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         if (seconds === 59) {
-            setMinutes(pervMinutes => pervMinutes + 1)
+            setMinutes(prevMinutes => prevMinutes + 1)
             setseconds(0)
         }
     }, [seconds])
@@ -29,7 +29,7 @@ export const Simplecounter = () => {
                         <FontAwesomeIcon className="clock" icon={faClock} />
                     </div>
                     <div className="segundos d-flex gap-2 col-auto">
-                        <p>{minutes >= 10? "": 0 }</p>
+                        <p>{minutes >= 10 ? "" : 0}</p>
                         <p>{minutes}</p>
                     </div>
                     <div className="minutos d-flex gap-2  col-auto">
